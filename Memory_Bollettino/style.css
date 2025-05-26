@@ -1,0 +1,109 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #f0f8ff, #dbe9ff);
+  margin: 0;
+  padding: 0;
+}
+
+/* Schermata di gioco */
+#game-container h1 {
+  font-size: 36px;
+  margin-top: 20px;
+  color: #1e3a8a;
+  text-shadow: 1px 1px 2px #aaa;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 190px);
+  grid-gap: 15px;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 550px;
+}
+
+.card {
+  width: 190px;
+  height: 190px;
+  perspective: 600px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #1e3a8a;
+}
+
+/* Schermata di vittoria */
+#victory-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #e0ffe0, #b5f7b5);
+  padding: 5px;
+}
+
+#victory-screen h1 {
+  font-size: 65px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#victory-image {
+  width: 1700px;
+  margin: 15px 0;
+}
+
+#victory-screen button {
+  padding: 12px 24px;
+  font-size: 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#victory-screen button:hover {
+  background-color: #1b5e20;
+}
